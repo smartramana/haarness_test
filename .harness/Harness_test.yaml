@@ -31,7 +31,7 @@ pipeline:
                   name: Run_1
                   identifier: Run_1
                   spec:
-                    shell: Sh
+                    shell: Bash
                     command: |-
                       echo "Hello woulrd"
-                      terraform fmt
+                      terraform --version
