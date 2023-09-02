@@ -1,0 +1,35 @@
+pipeline:
+  name: Harness_test
+  identifier: Harness_test
+  projectIdentifier: smart
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: terraform-aws-ec2-instance
+        build: <+input>
+  stages:
+    - stage:
+        name: Clone
+        identifier: Clone
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: echo "Hello woulrd"
