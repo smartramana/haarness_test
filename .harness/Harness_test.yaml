@@ -35,3 +35,10 @@ pipeline:
                     command: |-
                       echo "Hello woulrd"
                       terraform --version
+              - step:
+                  type: Plugin
+                  name: cloudformation
+                  identifier: cloudformation
+                  spec:
+                    connectorRef: account.Dockerhub
+                    image: robertstettner/drone-cloudformation
