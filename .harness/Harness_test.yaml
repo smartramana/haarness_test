@@ -39,6 +39,12 @@ pipeline:
                   type: Plugin
                   name: cloudformation
                   identifier: cloudformation
+                  settings:
+                    stackname: my-awesome-stack
+                    template: templates/stack.yml
+                    params:
+                      Version: 123
+                      Environment: staging
                   spec:
                     connectorRef: account.Dockerhub
                     image: robertstettner/drone-cloudformation
